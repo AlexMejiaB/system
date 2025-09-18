@@ -25,7 +25,6 @@ export default function Navigation() {
     { href: "/dashboard", label: "Dashboard", icon: BarChart3 },
     { href: "/dashboard/employees", label: "Employees", icon: Users },
     { href: "/dashboard/employees/add", label: "Add Employee", icon: UserPlus },
-    { href: "/dashboard/applicants", label: "Applicants", icon: UserCheck },
     { href: "/dashboard/positions", label: "Positions", icon: Briefcase },
   ]
 

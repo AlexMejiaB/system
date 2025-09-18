@@ -58,7 +58,7 @@ export function PayrollStats() {
           <Users className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{stats.totalEmployees.toLocaleString()}</div>
+          <div className="text-2xl font-bold">{(stats.totalEmployees ?? 0).toLocaleString()}</div>
           <p className="text-xs text-muted-foreground">Active workforce</p>
         </CardContent>
       </Card>
@@ -69,7 +69,7 @@ export function PayrollStats() {
           <DollarSign className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">${stats.totalPayroll.toLocaleString()}</div>
+          <div className="text-2xl font-bold">${(stats.totalPayroll ?? 0).toLocaleString()}</div>
           <p className="text-xs text-muted-foreground">Monthly total</p>
         </CardContent>
       </Card>
@@ -80,7 +80,7 @@ export function PayrollStats() {
           <TrendingUp className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">${stats.avgSalary.toLocaleString()}</div>
+          <div className="text-2xl font-bold">${(stats.avgSalary ?? 0).toLocaleString()}</div>
           <p className="text-xs text-muted-foreground">Per employee</p>
         </CardContent>
       </Card>
@@ -91,7 +91,7 @@ export function PayrollStats() {
           <AlertCircle className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{stats.pendingPayments}</div>
+          <div className="text-2xl font-bold">{(stats.pendingPayments ?? 0)}</div>
           <p className="text-xs text-muted-foreground">Require attention</p>
         </CardContent>
       </Card>

@@ -15,15 +15,16 @@ export default function LoginPage() {
   const [error, setError] = useState('')
   const router = useRouter()
   const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get('callbackUrl') || '/'
+  const callbackUrl = searchParams.get('callbackUrl') || '/pre-portal'
 
   useEffect(() => {
     getSession().then((session) => {
       if (session) {
-        router.push(callbackUrl)
+        // Si ya hay sesión activa, redirigir al pre-portal
+        router.push('/pre-portal')
       }
     })
-  }, [router, callbackUrl])
+  }, [router])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -40,7 +41,8 @@ export default function LoginPage() {
       if (result?.error) {
         setError('Invalid credentials')
       } else {
-        router.push(callbackUrl)
+        // Después de login exitoso, redirigir al pre-portal
+        router.push('/pre-portal')
       }
     } catch (error) {
       setError('An error occurred')
@@ -108,4 +110,3 @@ export default function LoginPage() {
     </div>
   )
 }
-
